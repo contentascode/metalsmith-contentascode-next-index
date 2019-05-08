@@ -1,0 +1,33 @@
+{
+  "name": "metalsmith-contentascode-next-index",
+  "description": "A metalsmith plugin to index content before build with contentascode next.js pipeline",
+  "repository": "git://github.com/iilab/metalsmith-contentascode-next-index.git",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint src/*.js",
+    "build": "babel -d lib src --source-maps",
+    "build:watch": "nodemon --watch src --exec npm run build",
+    "test": "npm -s run lint && npm -s run build &&  mocha --compilers js:babel-register",
+    "postversion": "git push --follow-tags",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "assert-dir-equal": "^1.0.1",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.5.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.1.1",
+    "metalsmith": "^2.3.0",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "async": "^2.4.1",
+    "debug": "^2.2.0",
+    "multimatch": "^2.1.0"
+  }
+}
